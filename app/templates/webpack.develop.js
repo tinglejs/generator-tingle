@@ -21,5 +21,12 @@ module.exports = {
     },
     externals: {
         react: 'var React' // 相当于把全局的React作为模块的返回 module.exports = React;
-    }
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+          __LOCAL__: false, // 本地环境
+          __DEV__:   false, // 日常环境
+          __PRO__:   true   // 生产环境
+        })
+    ]
 };

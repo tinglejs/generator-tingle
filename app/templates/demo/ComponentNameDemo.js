@@ -1,5 +1,5 @@
 import React from 'react';
-import {Name} from '../src';
+import {<%= ComponentName %>} from '../src';
 
 // TODO: move the line to tingle-env
 React.initializeTouchEvents(true);
@@ -15,7 +15,7 @@ class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Name/>
+                <<%= ComponentName %>/>
             </div>
         );
     }

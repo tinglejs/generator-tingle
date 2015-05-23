@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Name extends React.Component {
+class <%= ComponentName %> extends React.Component {
 
     constructor(props) {
         super(props);
@@ -13,7 +13,7 @@ class Name extends React.Component {
     }
 }
 
-Name.defaultProps = {
+<%= ComponentName %>.defaultProps = {
 }
 
-export {Name};
+export {<%= ComponentName %>};

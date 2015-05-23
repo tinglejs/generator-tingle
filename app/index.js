@@ -35,7 +35,6 @@ module.exports = yeoman.generators.Base.extend({
         this.prompt(prompts, function(answers) {
             this.name = answers.name;
             this.ComponentName = _.capitalize(_.camelCase(answers.name)).replace(/Tingle/, '');
-            this.log('~~:'+this.ComponentName);
 
             this.keywords = answers.keywords.split(',').map(function(el) {
                 return el.trim();
@@ -73,7 +72,7 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function() {
-        this.npmInstall();
+        // this.npmInstall();
         // this.spawnCommand('node -v');
     }
 });

@@ -1,1 +1,1 @@
-module.exports = require('./Name');
+module.exports = require('./<%= ComponentName %>');
