@@ -48,11 +48,11 @@ module.exports = yeoman.generators.Base.extend({
 
     app: function() {
         this.config.save();
-        this.copy('.gitignore', '.gitignore');
+        this.copy('_gitignore', '.gitignore');
         // TODO
         // this.template('README.md', 'README.md');
         this.copy('gulpfile.js', 'gulpfile.js');
-        this.template('package.json', 'package.json');
+        this.template('_package.json', 'package.json');
         this.template('webpack.develop.js', 'webpack.develop.js');
     },
 

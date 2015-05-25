@@ -1,5 +1,5 @@
-import React from 'react';
-import {<%= ComponentName %>} from '../src';
+
+var <%= ComponentName %> = require('../src');
 
 // TODO: move the line to tingle-env
 React.initializeTouchEvents(true);

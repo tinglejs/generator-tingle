@@ -11,12 +11,12 @@ module.exports = {
     devtool: '#source-map', // 这个配置要和output.sourceMapFilename一起使用
     module: {
         loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
+            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?stage=1'}
         ]
     },
     resolve: {
         alias: {
-            'tingle-foo-bar': __dirname + '/tingle/tingle-foo-bar/src' // 自定义别名
+            'tingle-foo': __dirname + '/tingle/tingle-foo/src' // 自定义别名
         }
     },
     externals: {

@@ -1,5 +1,6 @@
-import React from 'react';
-
+/**
+ * <%= ComponentName %> Component for tinglejs
+ */
 class <%= ComponentName %> extends React.Component {
 
     constructor(props) {
@@ -16,4 +17,8 @@ class <%= ComponentName %> extends React.Component {
 <%= ComponentName %>.defaultProps = {
 }
 
-export {<%= ComponentName %>};
+// http://facebook.github.io/react/docs/reusable-components.html
+<%= ComponentName %>.propTypes = {
+}
+
+module.exports = <%= ComponentName %>;

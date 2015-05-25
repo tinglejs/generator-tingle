@@ -78,11 +78,13 @@ gulp.task('develop', [
     'pack_demo', 
     'stylus_component', 'stylus_demo'
 ], function() {
-    browserSync({
-        server: {
-            baseDir: './'
-        }
-    });
+    setTimeout(function () {
+        browserSync({
+            server: {
+                baseDir: './'
+            }
+        });        
+    }, 600);
 
     gulp.watch('src/**/*.js', ['pack_demo', function () {
         setTimeout(function () {
