@@ -5,7 +5,6 @@ var yeoman = require('yeoman-generator');
 
 module.exports = yeoman.generators.Base.extend({
     init: function() {
-        // this.pkg = require('../package.json');
     },
 
     askFor: function() {
@@ -53,7 +52,7 @@ module.exports = yeoman.generators.Base.extend({
         // this.template('README.md', 'README.md');
         this.copy('gulpfile.js', 'gulpfile.js');
         this.template('_package.json', 'package.json');
-        this.template('webpack.develop.js', 'webpack.develop.js');
+        this.template('webpack.dev.js', 'webpack.dev.js');
     },
 
     demoFiles: function() {
@@ -72,7 +71,7 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function() {
+        // 有权限问题
         // this.npmInstall();
-        // this.spawnCommand('node -v');
     }
 });

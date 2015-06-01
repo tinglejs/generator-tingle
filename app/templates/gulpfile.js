@@ -1,12 +1,7 @@
 // https://github.com/gulpjs/gulp/tree/master/docs
 var gulp = require('gulp');
 
-// https://www.npmjs.com/package/gulp-webpack/
-var webpack = require("gulp-webpack");
-
-// https://github.com/webpack/webpack-with-common-libs/blob/master/webpack.config.js
-// 开发`Tingle component`时使用的配置
-var developConfig = require('./webpack.develop.js');
+var webpack = require('webpack');
 
 // https://www.npmjs.com/package/gulp-rename/
 var rename = require('gulp-rename');
@@ -33,11 +28,13 @@ gulp.task('clear', function () {
     });
 });
 
-gulp.task('pack_demo', function() {
-    gulp.src('')
-        .pipe(webpack(developConfig))
-        .pipe(gulp.dest('./dist'));
-    console.info('###### pack_demo done ######');
+gulp.task('pack_demo', function(cb) {
+
+    webpack(require('./webpack.dev.js'), function (err, stats) {
+        if(err) cb(err);
+        cb();
+        console.info('###### pack_demo done ######');
+    });
 });
 
 // gulp.task('uglify_component', ['pack_component'], function () {

@@ -1,3 +1,7 @@
+// TODO: move the two lines below to tingle-context
+require("fastclick").attach(document.body);
+React.initializeTouchEvents(true);
+
 
 var <%= ComponentName %> = require('../src');
 
