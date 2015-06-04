@@ -44,12 +44,10 @@ module.exports = yeoman.generators.Base.extend({
         }.bind(this));
     },
 
-
     app: function() {
         this.config.save();
         this.copy('_gitignore', '.gitignore');
-        // TODO
-        // this.template('README.md', 'README.md');
+        this.template('README.md', 'README.md');
         this.copy('gulpfile.js', 'gulpfile.js');
         this.template('_package.json', 'package.json');
         this.template('webpack.dev.js', 'webpack.dev.js');
