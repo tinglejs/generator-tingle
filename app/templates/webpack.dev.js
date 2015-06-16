@@ -5,7 +5,7 @@ module.exports = {
         demo: './demo/index'
     },
     output: {
-        path: './dist', 
+        path: './dist',
         filename: "[name].js",
         sourceMapFilename: "[name].js.map"
     },
@@ -16,9 +16,22 @@ module.exports = {
         ]
     },
     resolve: {
-        alias: {
-            'tingle-foo': __dirname + '/tingle/tingle-foo/src' // 自定义别名
-        }
+        alias: (function () {
+            var alias = {};
+            var components = [
+                'tingle-mask',
+                'tingle-on-off',
+                'tingle-on-off-field',
+                'tingle-style',
+                'tingle-slide',
+                'tingle-text-field',
+                'tingle-textarea-field',
+            ];
+            components.forEach(function (item) {
+                alias[item] = __dirname + '/tingle/' + item + '/src'
+            });
+            return alias;
+        })()
     },
     externals: {
         react: 'var React' // 相当于把全局的React作为模块的返回 module.exports = React;
