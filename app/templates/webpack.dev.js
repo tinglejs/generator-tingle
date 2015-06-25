@@ -18,17 +18,25 @@ module.exports = {
     resolve: {
         alias: (function () {
             var alias = {};
+            // 按字母排序
             var components = [
+                'tingle-dialog',
+                'tingle-group-list',
+                'tingle-layer',
                 'tingle-mask',
+                'tingle-number-field',
                 'tingle-on-off',
                 'tingle-on-off-field',
-                'tingle-style',
+                'tingle-select-field',
                 'tingle-slide',
+                'tingle-slot',
+                'tingle-style',
                 'tingle-text-field',
                 'tingle-textarea-field',
+                'tingle-tip',
             ];
             components.forEach(function (item) {
-                alias[item] = __dirname + '/tingle/' + item + '/src'
+                alias[item] = [__dirname, 'tingle', item, 'src'].join('/')
             });
             return alias;
         })()

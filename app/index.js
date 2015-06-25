@@ -17,7 +17,7 @@ module.exports = yeoman.generators.Base.extend({
         },{
             name: 'description',
             message: 'Description',
-            default: 'The best module ever.'
+            default: path.basename(process.cwd()) + ' component for tingle.'
         }, {
             name: 'keywords',
             message: 'Key your keywords (comma to split)'
