@@ -1,5 +1,5 @@
 /**
- * <%= ComponentName %> Component for tinglejs
+ * <%= ComponentName %> Component for tingle
  * @auther <%= props.authorName %>
  *
  * Copyright 2014-2015, Tingle Team, Alinw.

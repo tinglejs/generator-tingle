@@ -33,7 +33,8 @@ module.exports = yeoman.generators.Base.extend({
 
         this.prompt(prompts, function(answers) {
             this.name = answers.name;
-            this.ComponentName = _.capitalize(_.camelCase(answers.name)).replace(/Tingle/, '');
+            this.ComponentName = _.capitalize(_.camelCase(answers.name))
+            .replace(/Tingle/, '').replace(/^Dd/, 'DD').replace(/^Nw/, 'NW');
 
             this.keywords = answers.keywords.split(',').map(function(el) {
                 return el.trim();

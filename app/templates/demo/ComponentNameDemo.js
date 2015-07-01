@@ -1,7 +1,11 @@
-// TODO: move the two lines below to tingle-context
-require("fastclick").attach(document.body);
-React.initializeTouchEvents(true);
-
+/**
+ * <%= ComponentName %> Component Demo for tingle
+ * @auther <%= props.authorName %>
+ *
+ * Copyright 2014-2015, Tingle Team, Alinw.
+ * All rights reserved.
+ */
+var classnames = require('classnames');
 
 var <%= ComponentName %> = require('../src');
 
@@ -22,4 +26,4 @@ class Demo extends React.Component {
     }
 };
 
-React.render(<Demo/>, document.getElementById('TingleDemo'));
+module.exports = Demo;
