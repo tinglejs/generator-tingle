@@ -20,7 +20,6 @@ module.exports = {
             var alias = {};
             // 按字母排序
             var components = [
-                'tingle-context',
                 'tingle-dialog',
                 'tingle-group-list',
                 'tingle-layer',

@@ -32,6 +32,10 @@ $ npm install
 
 ## updates
 
+#### v1.0.8 (2015-07-07)
+
+* `tingle-context`改为`npm`安装，以后不再需要安装`tingle-context`子模块。
+
 #### v1.0.7 (2015-07-01)
 
 * 针对**钉钉**和**内外**的定制版命名修复。如果目录名称是`tingle-dd-number-field`，则生成的控件名称是`DDNumberField`。
