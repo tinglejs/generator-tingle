@@ -12,7 +12,17 @@ module.exports = {
     devtool: '#source-map', // 这个配置要和output.sourceMapFilename一起使用
     module: {
         loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?stage=1'}
+            {
+                test: /\.js$/,
+                // tingle以外的modules都不需要经过babel解析
+                exclude: function (path) {
+                    var isNpmModule = !!path.match(/node_modules/);
+                    var isTingleModule = !!path.match(/node_modules\/tingle/);
+                    isNpmModule && !isTingleModule && console.log('~~~:'+path);
+                    return isNpmModule && !isTingleModule;
+                },
+                loader: 'babel-loader?stage=1'
+            }
         ]
     },
     resolve: {
