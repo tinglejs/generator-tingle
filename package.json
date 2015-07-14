@@ -1,9 +1,11 @@
 {
   "name": "generator-tingle",
   "version": "1.0.8",
-  "description": "Yeoman generator for Tingle",
+  "description": "Scaffold for Tingle Component",
   "files": [
-    "app"
+    "app",
+    "README.md",
+    "LICENSE"
   ],
   "keywords": [
     "yeoman-generator",

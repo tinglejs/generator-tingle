@@ -1,4 +1,20 @@
+var fs = require('fs');
 var webpack = require('webpack');
+
+// 扫描tingle目录下的所有module
+function getTingleModuleAlias() {
+    var alias = {};
+
+    // 判断是否存在tingle目录
+    if (!fs.existsSync(__dirname + '/tingle')) return alias;
+
+    var modules = fs.readdirSync(__dirname + '/tingle');
+    modules.forEach(function (name) {
+        alias[name] = [__dirname, 'tingle', name, 'src'].join('/');
+    });
+    return alias;
+}
+
 module.exports = {
     cache: false,
     entry: {
@@ -18,7 +34,6 @@ module.exports = {
                 exclude: function (path) {
                     var isNpmModule = !!path.match(/node_modules/);
                     var isTingleModule = !!path.match(/node_modules\/tingle/);
-                    isNpmModule && !isTingleModule && console.log('~~~:'+path);
                     return isNpmModule && !isTingleModule;
                 },
                 loader: 'babel-loader?stage=1'
@@ -26,29 +41,7 @@ module.exports = {
         ]
     },
     resolve: {
-        alias: (function () {
-            var alias = {};
-            // 按字母排序
-            var components = [
-                'tingle-dialog',
-                'tingle-group-list',
-                'tingle-layer',
-                'tingle-mask',
-                'tingle-number-field',
-                'tingle-on-off',
-                'tingle-on-off-field',
-                'tingle-select-field',
-                'tingle-slide',
-                'tingle-slot',
-                'tingle-text-field',
-                'tingle-textarea-field',
-                'tingle-tip',
-            ];
-            components.forEach(function (item) {
-                alias[item] = [__dirname, 'tingle', item, 'src'].join('/')
-            });
-            return alias;
-        })()
+        alias: getTingleModuleAlias()
     },
     externals: {
         react: 'var React' // 相当于把全局的React作为模块的返回 module.exports = React;
