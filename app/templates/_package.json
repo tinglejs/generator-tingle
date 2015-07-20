@@ -13,8 +13,8 @@
     "README.md"
   ],
   "keywords": [
-    "<%= name %>,<%= ComponentName %>"<% for (var i = 0; i < keywords.length; i++) { %>,
-    "<%= keywords[i] %>"<% } %>
+    "<%= name %>,<%= ComponentName %>"<% if(keywords.length){%><% for (var i = 0; i < keywords.length; i++) { %>,
+    "<%= keywords[i] %>"<% }} %>
   ],
   "dependencies": {
     "classnames": "^2.1.2",
