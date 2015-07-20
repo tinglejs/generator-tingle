@@ -14,5 +14,9 @@
   "devDependencies": {
     "yeoman-environment": "~1.2.7",
     "yeoman-generator": "^0.18.3"
+  },
+  "dependencies": {
+    "lodash": "~3.10.0",
+    "yeoman-generator": "~0.20.2"
   }
 }
