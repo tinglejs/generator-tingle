@@ -1,4 +1,6 @@
-## <%= ComponentName %>
+## <%= name %> [![Dependency Status](http://img.shields.io/david/tinglejs/<%= name %>.svg?style=flat-square)](https://david-dm.org/tinglejs/<%= name %>) [![devDependency Status](http://img.shields.io/david/dev/tinglejs/<%= name %>.svg?style=flat-square)](https://david-dm.org/tinglejs/<%= name %>#info=devDependencies) [![Bower version](https://badge.fury.io/bo/<%= name %>.svg)](http://badge.fury.io/bo/<%= name %>)
+
+[![<%= name %>](https://nodei.co/npm/<%= name %>.png)](https://npmjs.org/package/<%= name %>)
 
 ## use
 
