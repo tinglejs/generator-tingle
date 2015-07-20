@@ -11,8 +11,12 @@
     "yeoman-generator",
     "tingle-generator"
   ],
+  "devDependencies": {
+    "yeoman-environment": "~1.2.7",
+    "yeoman-generator": "^0.18.3"
+  },
   "dependencies": {
-    "yeoman-generator": "^0.18.3",
-    "lodash": "^3.9.1"
+    "lodash": "~3.10.0",
+    "yeoman-generator": "~0.20.2"
   }
 }
