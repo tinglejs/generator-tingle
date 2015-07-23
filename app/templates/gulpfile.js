@@ -1,5 +1,6 @@
 // https://github.com/gulpjs/gulp/tree/master/docs
 var gulp = require('gulp');
+var fs = require('fs');
 
 var webpack = require('webpack');
 
@@ -15,6 +16,14 @@ var sourcemaps = require('gulp-sourcemaps');
 
 // https://github.com/stevelacy/gulp-stylus
 var stylus = require('gulp-stylus');
+
+var gulpUniqueFile = require('gulp-unique-files');
+var pathMap = require('gulp-pathmap');
+
+//make inline svg
+var svgSymbols = require('gulp-svg-symbols');
+var injectStr  = require('gulp-inject-string');
+var removeHtml = require('gulp-html-remove');
 
 gulp.task('pack_demo', function(cb) {
     webpack(require('./webpack.dev.js'), function (err, stats) {
@@ -46,6 +55,25 @@ gulp.task('stylus_demo', function(cb) {
     cb();
 });
 
+gulp.task('svg_sprite', function () {
+    return gulp.src(['./src/**/*.svg', './tingle/**/*.svg', '!./tingle/**/img/*.svg'])
+            .pipe(pathMap('%f'))
+            .pipe(gulpUniqueFile())
+            .pipe(svgSymbols({
+                templates: ['default-svg']
+            }))
+            .pipe(gulp.dest('./dist'))
+});
+
+gulp.task('svg_inject', ['svg_sprite'], function (cb) {
+    gulp.src('index.html')
+        .pipe(removeHtml({ attrs : { 'xmlns' : ['http://www.w3.org/2000/svg'] }}))
+        .pipe(injectStr.before('</body>', fs.readFileSync('./dist/svg-symbols.svg', {encoding: 'utf-8'})))
+        .pipe(gulp.dest('.'));
+    console.info('###### svg source inject done ######');
+    cb();
+});
+
 gulp.task('reload_by_js', ['pack_demo'], function () {
     reload();
 });
@@ -62,7 +90,8 @@ gulp.task('reload_by_demo_css', ['stylus_demo'], function () {
 gulp.task('develop', [
     'pack_demo',
     'stylus_component',
-    'stylus_demo'
+    'stylus_demo',
+    'svg_inject'
 ], function() {
     browserSync({
         server: {
