@@ -8,6 +8,7 @@
     "email": "<%= props.authorEmail %>"<% if (props.authorUrl) { %>,
     "url": "<%= props.authorUrl %>"<% } %>
   },
+  "main": "src/index.js",
   "files": [
     "src",
     "README.md"

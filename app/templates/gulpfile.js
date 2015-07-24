@@ -56,15 +56,19 @@ gulp.task('stylus_demo', function(cb) {
 });
 
 gulp.task('svg_sprite', function () {
-    return gulp.src(['./src/**/*.svg', './tingle/**/*.svg', '!./tingle/**/img/*.svg'])
-            .pipe(pathMap('%f'))
-            .pipe(gulpUniqueFile())
-            .pipe(svgSymbols({
-                templates: ['default-svg']
-            }))
-            .pipe(gulp.dest('./dist'))
+    return gulp.src([
+        './src/svg/**/*.svg',
+        './tingle/*/src/svg/**/*.svg'
+    ])
+        .pipe(pathMap('%f'))
+        .pipe(gulpUniqueFile())
+        .pipe(svgSymbols({
+            templates: ['default-svg']
+        }))
+        .pipe(gulp.dest('./dist'));
 });
 
+//
 gulp.task('svg_inject', ['svg_sprite'], function (cb) {
     gulp.src('index.html')
         .pipe(removeHtml({ attrs : { 'xmlns' : ['http://www.w3.org/2000/svg'] }}))
@@ -86,6 +90,10 @@ gulp.task('reload_by_demo_css', ['stylus_demo'], function () {
     reload();
 });
 
+gulp.task('reload_by_svg', ['svg_inject'], function () {
+    reload();
+});
+
 // 开发`Tingle component`时，执行`gulp develop` or `gulp d`
 gulp.task('develop', [
     'pack_demo',
@@ -104,6 +112,12 @@ gulp.task('develop', [
     gulp.watch('src/**/*.styl', ['reload_by_component_css']);
 
     gulp.watch('demo/**/*.styl', ['reload_by_demo_css']);
+
+    // 监听svg icon文件的变化
+    gulp.watch([
+        'src/svg/tingle/*.svg', // 来自tingle提供的icon
+        'src/svg/custom/*.svg'  // 控件自定义的icon
+    ], ['reload_by_svg']);
 });
 
 // 快捷方式
