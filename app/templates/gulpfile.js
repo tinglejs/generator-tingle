@@ -36,7 +36,7 @@ var removeHtml = require('gulp-html-remove');
 gulp.task('pack_demo', function(cb) {
     webpack(require('./webpack.dev.js'), function (err, stats) {
         // 重要 打包过程中的语法错误反映在stats中
-        console.log('webpack log:'  stats);
+        console.log('webpack log:' + stats);
         if(err) cb(err);
         console.info('###### pack_demo done ######');
         cb();
