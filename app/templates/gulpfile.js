@@ -17,6 +17,12 @@ var sourcemaps = require('gulp-sourcemaps');
 // https://github.com/stevelacy/gulp-stylus
 var stylus = require('gulp-stylus');
 
+// https://github.com/wearefractal/gulp-concat
+var concat = require('gulp-concat');
+
+// https://www.npmjs.com/package/gulp-just-replace/
+var replace = require('gulp-just-replace');
+
 var gulpUniqueFile = require('gulp-unique-files');
 var pathMap = require('gulp-pathmap');
 
@@ -46,9 +52,14 @@ gulp.task('stylus_component', function(cb) {
 });
 
 gulp.task('stylus_demo', function(cb) {
-    gulp.src(['./demo/**/*.styl'])
+    gulp.src(['./tingle/**/*.css','./demo/**/*.styl','!./tingle/tingle-style/**/*.css'])
         .pipe(sourcemaps.init())
         .pipe(stylus())
+        .pipe(concat('<%= ComponentName %>Demo.css'))
+        .pipe(replace([{
+            search: /\/\*#\ssourceMappingURL=([^\*\/]+)\.map\s\*\//g,
+            replacement: '/* end for `$1` */\n'
+        }]))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./demo'));
     console.info('###### stylus_demo done ######');
