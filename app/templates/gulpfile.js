@@ -58,10 +58,10 @@ gulp.task('stylus_demo', function(cb) {
         .pipe(sourcemaps.init())
         .pipe(stylus())
         .pipe(concat('<%= ComponentName %>Demo.css'))
-         .pipe(replace([{
-             search: /\/\*#\ssourceMappingURL=([^\*\/] )\.map\s\*\//g,
-             replacement: '/* end for `$1` */\n'
-         }]))
+        .pipe(replace([{
+            search: /\/\*#\ssourceMappingURL=([^\*\/] )\.map\s\*\//g,
+            replacement: '/* end for `$1` */\n'
+        }]))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./demo'));
     console.info('###### stylus_demo done ######');
@@ -69,10 +69,7 @@ gulp.task('stylus_demo', function(cb) {
 });
 
 gulp.task('svg_sprite', function () {
-    return gulp.src([
-        './src/svg/**/*.svg',
-        './tingle/*/src/svg/**/*.svg'
-    ])
+    gulp.src(['./src/svg/**/*.svg','./tingle/*/src/svg/**/*.svg'])
         .pipe(pathMap('%f'))
         .pipe(gulpUniqueFile())
         .pipe(svgSymbols({
