@@ -2,7 +2,7 @@
 
 Scaffold for Tingle Component
 
-## use
+## install
 
 全局安装脚手架工具`yo`
 
@@ -16,7 +16,9 @@ $ npm install yo -g
 $ npm install generator-tingle -g
 ```
 
-创建控件目录
+## usage
+
+创建控件目录，比如`tingle-hello-world`
 
 ```shell
 $ mkdir tingle-hello-world
@@ -25,15 +27,21 @@ $ cd tingle-hello-world
 
 > NOTE，`Tingle Component`目录名称命名规则：  
 >
-> * 必须以`tingle-`为前缀。  
-> * 多个单词必须使用`-`分割。  
-> * 不建议包含下划线及特殊字符。
+> * 必须以`tingle-`为前缀
+> * 多个单词必须使用`-`分割
+> * 字母全部小写
+> * 不建议包含下划线及特殊字符
 
 
-初始化并安装依赖
+初始化控件目录结构，根据提示进行响应的配置。
 
 ```
 $ yo tingle
+```
+
+安装依赖
+
+```
 $ npm install
 ```
 
@@ -50,25 +58,22 @@ $ gulp d
 
 ## updates
 
-#### v1.0.11 (2015-07-23)
+#### v1.0.11 (2015-07-30)
 
-* 在模板中源文件 `src` 中预置了 `SVG` 资源文档，包括 `tingle` 和 `custom`
-* `package.json` 中添加新的开发组件
-* 运行开发环境时加入SVG资源合并及植入内嵌任务
-
-```
-.
-├── svg  ----------------------------- SVG资源目录
-│   ├── tingle  -------------------- 通用svg
-│   │   
-│   └── custom  -------------------- 自定义svg（文件命名需添加prefix，约定使用组件或项目名作为前缀）
-
-```
+* `tingle`目录下的所有子模块样式，现在可以自动插入到`demo`的样式。
+* 控件样式文件第一行默认加入`tingle-style`中提供的工具函数集。
+* `browser-sync`版本更新，内置`weinre`功能。
+* 添加`svg`图标方案(`tingle-icon`中提供)所对应的`gulp`任务和`svg`目录。
+  - `src/svg/tingle/` 存放`tingle`通用的图标。
+  - `src/svg/custom/` 存放控件私有的图标。
 
 #### v1.0.10 (2015-07-14)
 
 * fixed：`package.json`中的`main`值丢失了。
 
+#### v1.0.9 (2015-07-14)
+
+* 这个版本有错误！
 
 #### v1.0.8 (2015-07-14)
 

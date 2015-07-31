@@ -4,10 +4,7 @@ var fs = require('fs');
 
 var webpack = require('webpack');
 
-// https://github.com/terinjokes/gulp-uglify
-var uglify = require('gulp-uglify');
-
-// https://github.com/gulpjs/gulp/blob/master/docs/recipes/server-with-livereload-and-css-injection.md
+// http://browsersync.io/
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -79,7 +76,7 @@ gulp.task('svg_sprite', function () {
         .pipe(gulp.dest('./dist'));
 });
 
-//
+// 将svg插入到html页面
 gulp.task('svg_inject', ['svg_sprite'], function (cb) {
     gulp.src('index.html')
         .pipe(removeHtml({ attrs : { 'xmlns' : ['http://www.w3.org/2000/svg'] }}))
