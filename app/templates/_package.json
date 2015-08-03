@@ -28,21 +28,11 @@
   "devDependencies": {
     "babel-core": "^5.8.19",
     "babel-loader": "^5.3.2",
-    "browser-sync": "^2.8.1",
     "gulp": "^3.9.0",
-    "gulp-concat": "~2.6.0",
-    "gulp-html-remove": "~0.1.1",
-    "gulp-inject-string": "0.0.2",
-    "gulp-just-replace": "~1.0.2",
-    "gulp-pathmap": "~0.1.0",
-    "gulp-sourcemaps": "~1.5.1",
-    "gulp-stylus": "^2.0.5",
-    "gulp-svg-symbols": "~0.3.1",
-    "gulp-unique-files": "~0.1.2",
-    "webpack": "^1.10.5"
+    "tingle-dev-tools": "latest"
   },
   "scripts": {
-    "start": "gulp d"
+    "start": "gulp server"
   },
   "license": "MIT"
 }

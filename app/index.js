@@ -33,8 +33,11 @@ module.exports = yeoman.generators.Base.extend({
 
         this.prompt(prompts, function(answers) {
             this.name = answers.name;
-            this.ComponentName = _.capitalize(_.camelCase(answers.name))
+            this.ComponentName = _.capitalize(_.camelCase(answers.name));
             .replace(/Tingle/, '').replace(/^Dd/, 'DD').replace(/^Nw/, 'NW');
+
+            this.config.set('componentName', this.ComponentName);
+            this.config.save();
 
             this.keywords = answers.keywords.split(',').map(function(el) {
                 return el.trim();
@@ -46,25 +49,20 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     app: function() {
-        this.config.save();
         this.copy('_gitignore', '.gitignore');
         this.template('README.md', 'README.md');
         this.copy('gulpfile.js', 'gulpfile.js');
         this.template('_package.json', 'package.json');
-        this.template('webpack.dev.js', 'webpack.dev.js');
     },
 
     demoFiles: function() {
         this.template('index.html', 'index.html');
-        this.mkdir('demo');
         this.template('demo/index.js', 'demo/index.js');
         this.template('demo/ComponentNameDemo.js', 'demo/'+this.ComponentName+'Demo.js');
         this.template('demo/ComponentNameDemo.styl', 'demo/'+this.ComponentName+'Demo.styl');
     },
 
     componentFiles: function () {
-        this.mkdir('src');
-        this.mkdir('src/svg');
         this.mkdir('src/svg/tingle');
         this.mkdir('src/svg/custom');
         this.template('src/index.js', 'src/index.js');
@@ -73,7 +71,10 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function() {
-        // 有权限问题
-        // this.npmInstall();
+        var done = this.async();
+        this.spawnCommand('tnpm', [
+            'install',
+            '-d'
+        ]).on('close', done);
     }
 });

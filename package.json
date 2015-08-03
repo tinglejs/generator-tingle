@@ -1,6 +1,6 @@
 {
   "name": "generator-tingle",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Scaffold for Tingle Component",
   "files": [
     "app",
@@ -12,8 +12,7 @@
     "tingle-generator"
   ],
   "devDependencies": {
-    "yeoman-environment": "~1.2.7",
-    "yeoman-generator": "^0.18.3"
+    "yeoman-environment": "~1.2.7"
   },
   "dependencies": {
     "lodash": "~3.10.0",
