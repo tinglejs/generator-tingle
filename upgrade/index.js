@@ -8,12 +8,17 @@ module.exports = yeoman.generators.Base.extend({
     upgrade: function() {
         var me = this;
 
+        // 从 package.json 中取回脚手架初始化项目时指定的一些变量
+        var pkg = JSON.parse(me.readFileAsString('package.json'));
+        var authorName = pkg.author.name;
+        var componentName = _.capitalize(_.camelCase(pkg.name))
+            .replace(/Tingle/, '').replace(/^Dd/, 'DD').replace(/^Nw/, 'NW');
+
         // gulpfile 和 gitignore 更新
         me.bulkCopy('_gitignore', '.gitignore');
         me.bulkCopy('gulpfile.js', 'gulpfile.js');
 
         // 依赖更新
-        var pkg = JSON.parse(me.readFileAsString('package.json'));
         pkg.devDependencies = {
             'babel-core': '^5.8.19',
             'babel-loader': '^5.3.2',
@@ -22,10 +27,11 @@ module.exports = yeoman.generators.Base.extend({
         };
         me.writeFileFromString(JSON.stringify(pkg, null, '  '), 'package.json');
 
-        // 样式文件名更新
+        // DEMO 样式文件路径变更
         var html = me.readFileAsString('index.html');
-        if (html.indexOf('./demo/demo.css') === -1) {
-            me.appendToFile('index.html', 'head', '<link rel="stylesheet" href="./demo/demo.css">');
+        if (html.indexOf('./demo/' + componentName + 'Demo.css') !== -1) {
+            html = html.replace('./demo/' + componentName + 'Demo.css', './dist/demo.css');
+            me.writeFileFromString(html, 'index.html');
         }
 
         // 增加 svg 文件目录
@@ -33,9 +39,6 @@ module.exports = yeoman.generators.Base.extend({
         me.mkdir('src/svg/custom');
 
         // 没有版权声明的增加版权声明
-        var componentName = _.capitalize(_.camelCase(pkg.name))
-            .replace(/Tingle/, '').replace(/^Dd/, 'DD').replace(/^Nw/, 'NW');
-        var authorName = pkg.author.name;
         me.expandFiles('src/*.js').forEach(function(file) {
             var content = me.readFileAsString(file);
             if (content.indexOf('/**') && content.indexOf('/*!')) {
