@@ -53,10 +53,34 @@ $ gulp d
 
 执行了上面的命令后，会调起系统默认的浏览器，此时对`src`和`demo`目录下的文件做出的任何更改，都会自动触发`demo.js`的重新构建，浏览器也会自动刷新，enjoy！
 
+## 更新
 
+### 项目整体更新
 
+通过旧的脚手架创建的项目，可以通过以下命令自动更新到最新的脚手架的目录结构和规范。
+
+```
+tnpm install generator-tingle -g
+yo tingle:upgrade
+```
+
+### 开发工具和配置的更新
+
+通过以下命令可以更新项目的 gulp 任务和 webpack 相关配置文件。
+
+```
+tnpm install tingle-dev-tools
+```
 
 ## updates
+
+#### v1.0.12 (2015-08-04)
+
+* [开发工具](https://github.com/tinglejs/tingle-dev-tools)和脚手架分离，允许用户单独更新开发工具。
+* 增加项目整体的更新任务，以适应脚手架的变化。
+    ```
+    yo tingle:upgrade
+    ```
 
 #### v1.0.11 (2015-07-30)
 
