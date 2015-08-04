@@ -49,7 +49,7 @@ gulp.task('stylus_component', function(cb) {
 });
 
 gulp.task('stylus_demo', function(cb) {
-    gulp.src(['./tingle/**/*.css','./demo/**/*.styl','!./tingle/tingle-style/**/*.css'])
+    gulp.src(['./tingle/**/src/*.css','./demo/**/*.styl','!./tingle/tingle-style/**/*.css'])
         .pipe(sourcemaps.init())
         .pipe(stylus())
         .pipe(concat('<%= ComponentName %>Demo.css'))
