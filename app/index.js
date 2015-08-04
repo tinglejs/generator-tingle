@@ -33,11 +33,8 @@ module.exports = yeoman.generators.Base.extend({
 
         this.prompt(prompts, function(answers) {
             this.name = answers.name;
-            this.ComponentName = _.capitalize(_.camelCase(answers.name));
-            .replace(/Tingle/, '').replace(/^Dd/, 'DD').replace(/^Nw/, 'NW');
-
-            this.config.set('componentName', this.ComponentName);
-            this.config.save();
+            this.ComponentName = _.capitalize(_.camelCase(answers.name))
+                .replace(/Tingle/, '').replace(/^Dd/, 'DD').replace(/^Nw/, 'NW');
 
             this.keywords = answers.keywords.split(',').map(function(el) {
                 return el.trim();
@@ -49,6 +46,7 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     app: function() {
+        this.config.save();
         this.copy('_gitignore', '.gitignore');
         this.template('README.md', 'README.md');
         this.copy('gulpfile.js', 'gulpfile.js');
