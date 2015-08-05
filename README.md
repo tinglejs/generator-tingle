@@ -74,13 +74,22 @@ tnpm install tingle-dev-tools
 
 ## updates
 
-#### v1.0.12 (2015-08-04)
+#### v1.0.14
 
-* [开发工具](https://github.com/tinglejs/tingle-dev-tools)和脚手架分离，允许用户单独更新开发工具。
+* 去掉 package.json 中 files 配置。
 * 增加项目整体的更新任务，以适应脚手架的变化。
     ```
     yo tingle:upgrade
     ```
+* 允许用户在初始化项目时跳过安装依赖。
+
+#### v1.0.13 (2015-08-05)
+
+* 这个版本有错误！（package.json 的 files 忘了加配置……造成发了个空版本，在下个版本把 files 去掉）
+
+#### v1.0.12 (2015-08-04)
+
+* [开发工具](https://github.com/tinglejs/tingle-dev-tools)和脚手架分离，允许用户单独更新开发工具。
 
 #### v1.0.11 (2015-07-30)
 

@@ -29,6 +29,11 @@ module.exports = yeoman.generators.Base.extend({
             name: 'authorName',
             message: 'Author\'s Name',
             store: true
+        }, {
+            type: 'confirm',
+            name: 'skipInstall',
+            message: 'Skip install the dependencies?',
+            default: false
         }];
 
         this.prompt(prompts, function(answers) {
@@ -69,10 +74,12 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function() {
-        var done = this.async();
+        if (this.props.skipInstall) {
+            return;
+        }
         this.spawnCommand('tnpm', [
             'install',
             '-d'
-        ]).on('close', done);
+        ]).on('close', this.async());
     }
 });
