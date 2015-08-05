@@ -1,6 +1,6 @@
 {
   "name": "generator-tingle",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Scaffold for Tingle Component",
   "files": [
     "app",
