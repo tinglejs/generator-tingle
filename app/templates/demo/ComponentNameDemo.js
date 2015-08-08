@@ -5,6 +5,7 @@
  * Copyright 2014-2015, Tingle Team, Alinw.
  * All rights reserved.
  */
+
 var classnames = require('classnames');
 
 var <%= ComponentName %> = require('../src');
