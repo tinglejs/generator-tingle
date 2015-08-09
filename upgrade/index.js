@@ -19,6 +19,14 @@ module.exports = yeoman.generators.Base.extend({
         me.bulkCopy('gulpfile.js', 'gulpfile.js');
 
         // 依赖更新
+        pkg.dependencies = {
+            'classnames': '^2.1.2',
+            'fastclick': '^1.0.6',
+            'react': '^0.13.3',
+            'tingle-context': '~0.0.3',
+            'tingle-style': '~0.0.1',
+            'zepto': '0.0.4'
+        };
         pkg.devDependencies = {
             'babel-core': '^5.8.19',
             'babel-loader': '^5.3.2',
@@ -45,7 +53,7 @@ module.exports = yeoman.generators.Base.extend({
                 content = [
                     '/**',
                     ' * ' + componentName + ' Component for tingle',
-                    ' * @auther ' + authorName,
+                    ' * @author ' + authorName,
                     ' *',
                     ' * Copyright 2014-2015, Tingle Team, Alinw.',
                     ' * All rights reserved.',
@@ -61,7 +69,7 @@ module.exports = yeoman.generators.Base.extend({
                 content = [
                     '/**',
                     ' * ' + componentName + ' Component Style for tingle',
-                    ' * @auther ' + authorName,
+                    ' * @author ' + authorName,
                     ' *',
                     ' * Copyright 2014-2015, Tingle Team, Alinw.',
                     ' * All rights reserved.',
