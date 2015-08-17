@@ -1,4 +1,11 @@
-// https://github.com/gulpjs/gulp/tree/master/docs
+/**
+ * <%= ComponentName %> Component Style for tingle
+ * @author <%= props.authorName %>
+ *
+ * Copyright 2014-2015, Tingle Team, Alinw.
+ * All rights reserved.
+ */
+
 var gulp = require('gulp');
 var devTools = require('tingle-dev-tools');
 gulp.tasks = devTools.tasks;
