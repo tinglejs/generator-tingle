@@ -22,10 +22,6 @@ module.exports = yeoman.generators.Base.extend({
             name: 'keywords',
             message: 'Key your keywords (comma to split)'
         }, {
-            name: 'license',
-            message: 'License',
-            default: 'MIT'
-        }, {
             name: 'authorName',
             message: 'Author\'s Name',
             store: true
