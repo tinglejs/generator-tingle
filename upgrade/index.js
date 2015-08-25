@@ -23,8 +23,8 @@ module.exports = yeoman.generators.Base.extend({
             'classnames': '^2.1.2',
             'fastclick': '^1.0.6',
             'react': '^0.13.3',
-            'tingle-context': '~0.0.3',
-            'tingle-style': '~0.0.1',
+            'tingle-context': '~0.1.0',
+            'tingle-style': '~0.0.2',
             'zepto': '0.0.4'
         };
         pkg.devDependencies = {

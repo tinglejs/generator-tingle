@@ -34,5 +34,6 @@
   "scripts": {
     "start": "gulp server"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "screenshots": ""
 }
