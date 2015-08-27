@@ -64,6 +64,8 @@ tnpm install generator-tingle -g
 yo tingle:upgrade
 ```
 
+> 注意！upgrade 任务不会更新 package.json 中的 dependencies，请大家自己维护各自项目的依赖。
+
 ### 开发工具和配置的更新
 
 通过以下命令可以更新项目的 gulp 任务和 webpack 相关配置文件。
@@ -73,6 +75,11 @@ tnpm install tingle-dev-tools
 ```
 
 ## updates
+
+#### v1.0.16 (2015-08-17)
+
+* index.html 中 demo.css 位置调整。
+* upgrade 任务文档完善。
 
 #### v1.0.15 (2015-08-08)
 

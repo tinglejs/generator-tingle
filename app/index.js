@@ -22,10 +22,6 @@ module.exports = yeoman.generators.Base.extend({
             name: 'keywords',
             message: 'Key your keywords (comma to split)'
         }, {
-            name: 'license',
-            message: 'License',
-            default: 'MIT'
-        }, {
             name: 'authorName',
             message: 'Author\'s Name',
             store: true
@@ -56,6 +52,7 @@ module.exports = yeoman.generators.Base.extend({
         this.template('README.md', 'README.md');
         this.copy('gulpfile.js', 'gulpfile.js');
         this.template('_package.json', 'package.json');
+        this.template('_bower.json', 'bower.json');
     },
 
     demoFiles: function() {

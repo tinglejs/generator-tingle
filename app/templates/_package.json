@@ -3,11 +3,7 @@
   "version": "0.0.0",
   "description": "<%= props.description %>",
   "repository": "https://github.com/tinglejs/<%= name %>.git",
-  "author": {
-    "name": "<%= props.authorName %>",
-    "email": "<%= props.authorEmail %>"<% if (props.authorUrl) { %>,
-    "url": "<%= props.authorUrl %>"<% } %>
-  },
+  "author": "<%= props.authorName %>",
   "main": "src/index.js",
   "files": [
     "src",
@@ -34,5 +30,6 @@
   "scripts": {
     "start": "gulp server"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "screenshots": ""
 }
