@@ -2,6 +2,7 @@
 var path = require('path');
 var _ = require('lodash');
 var yeoman = require('yeoman-generator');
+var spawn = require('cross-spawn');
 
 module.exports = yeoman.generators.Base.extend({
     init: function() {
@@ -71,12 +72,20 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     install: function() {
-        if (this.props.skipInstall) {
+        var me = this;
+        if (me.props.skipInstall) {
             return;
         }
-        this.spawnCommand('tnpm', [
+        var done = me.async();
+        var args = [
             'install',
             '-d'
-        ]).on('close', this.async());
+        ];
+        var opts = {
+            stdio: 'inherit'
+        };
+        spawn('tnpm', args, opts).on('error', function() {
+            spawn('npm', args, opts).on('exit', done);
+        }).on('exit', done);
     }
 });
