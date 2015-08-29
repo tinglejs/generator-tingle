@@ -76,10 +76,14 @@ tnpm install tingle-dev-tools
 
 ## updates
 
-#### v1.0.16 (2015-08-17)
+#### v1.0.16 (2015-08-29)
 
-* index.html 中 demo.css 位置调整。
-* upgrade 任务文档完善。
+* `index.html`和`demo/index.js`中默认加入`FastClick`。
+* `render`方法中默认加入`className`属性。
+* 组件类默认加入`displayName`属性。
+* `index.html`中`demo.css`位置调整。
+* `upgrade`任务文档完善。
+* 加入`bower.json`
 
 #### v1.0.15 (2015-08-08)
 

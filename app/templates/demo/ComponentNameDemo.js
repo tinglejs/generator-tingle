@@ -19,11 +19,9 @@ class Demo extends React.Component {
     }
 
     render() {
-        return (
-            <div>
-                <<%= ComponentName %>/>
-            </div>
-        );
+        return <div>
+            <<%= ComponentName %>/>
+        </div>
     }
 };
 

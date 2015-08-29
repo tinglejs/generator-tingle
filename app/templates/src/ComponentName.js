@@ -5,6 +5,7 @@
  * Copyright 2014-2015, Tingle Team, Alinw.
  * All rights reserved.
  */
+var classnames = require('classnames');
 
 class <%= ComponentName %> extends React.Component {
 
@@ -13,9 +14,12 @@ class <%= ComponentName %> extends React.Component {
     }
 
     render() {
-        return (
-            <div><%= name %> component</div>
-        );
+        var t = this;
+        return <div ref="root" className={classnames('t<%= ComponentName %>', {
+            [t.props.className]: !!t.props.className
+        })}>
+            <%= ComponentName %> component for tingle
+        </div>;
     }
 }
 
@@ -24,6 +28,7 @@ class <%= ComponentName %> extends React.Component {
 
 // http://facebook.github.io/react/docs/reusable-components.html
 <%= ComponentName %>.propTypes = {
+    className: React.PropTypes.string
 }
 
 <%= ComponentName %>.displayName = '<%= ComponentName %>';
