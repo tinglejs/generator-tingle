@@ -1,14 +1,17 @@
-# <%= name %> [![npm version](https://badge.fury.io/js/<%= name %>.svg)](http://badge.fury.io/js/<%= name %>)
+## <%= name %>
 
+[![npm version](https://badge.fury.io/js/<%= name %>.svg)](http://badge.fury.io/js/<%= name %>)
 
-## TL;DR
+## Install
 
-## Simple Usage
+```js
+npm install <%= name %> --save
+```
 
-## 可用配置
+## Props
 
-## API接口
+## Demos
 
-## Links 相关链接
+## Links
 
 - [Fire a bug/Issues 提Bug](http://github.com/tinglejs/<%= name %>/issues)
