@@ -76,6 +76,10 @@ tnpm install tingle-dev-tools
 
 ## updates
 
+#### v1.0.17 (2015-?-?)
+
+* `README.md` 格式问题修复。
+
 #### v1.0.16 (2015-08-29)
 
 * `index.html`和`demo/index.js`中默认加入`FastClick`。
