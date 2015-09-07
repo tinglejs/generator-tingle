@@ -21,18 +21,18 @@ module.exports = yeoman.generators.Base.extend({
 
         // 依赖更新
         pkg.dependencies = {
-            'classnames': '^2.1.2',
-            'fastclick': '^1.0.6',
-            'react': '^0.13.3',
             'tingle-context': '~0.1.0',
-            'tingle-style': '~0.0.2',
-            'zepto': '0.0.4'
+            'tingle-style': '~0.0.1',
+            'classnames': '^2.1.2'
         };
         pkg.devDependencies = {
             'babel-core': '^5.8.19',
             'babel-loader': '^5.3.2',
             'gulp': '^3.9.0',
-            'tingle-dev-tools': 'latest'
+            'tingle-dev-tools': 'latest',
+            'react': '^0.13.3',
+            'zepto': '0.0.4',
+            'fastclick': '^1.0.6'
         };
         me.writeFileFromString(JSON.stringify(pkg, null, '  '), 'package.json');
 
