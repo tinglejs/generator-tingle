@@ -25,7 +25,7 @@ $ mkdir tingle-hello-world
 $ cd tingle-hello-world
 ```
 
-> NOTE，`Tingle Component`目录名称命名规则：  
+> NOTE，`Tingle Component`目录名称命名规则：
 >
 > * 必须以`tingle-`为前缀
 > * 多个单词必须使用`-`分割
@@ -75,6 +75,13 @@ tnpm install tingle-dev-tools
 ```
 
 ## updates
+
+#### v1.0.18 (2015-9-11)
+
+* `README.md` 格式问题修复。
+* `package..json` 依赖更新。
+* upgrade 默认不进行依赖更新。
+
 
 #### v1.0.17 (2015-?-?)
 
@@ -144,7 +151,7 @@ tnpm install tingle-dev-tools
 * `tingle-style`改为`npm`安装，以后不再需要安装`tingle-style`子模块。
 * 所有控件都默认依赖`tingle-context`和定制版的`modernizr`，所以要安装`tingle-context`子模块（包含`modernizr`）。
 * 将手势初始化移动到`tingle-context`中，包括`Fastclick`和`React.initializeTouchEvents(true)`等。
-* `demo`中现在返回一个`Demo`控件，方便后续把各个控件的`demo`集成到一个页面。比如 
+* `demo`中现在返回一个`Demo`控件，方便后续把各个控件的`demo`集成到一个页面。比如
 
 	```js
 	// 直接将各个子模块对应的Demo控件引入
