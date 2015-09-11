@@ -1,6 +1,4 @@
-# <%= name %>
-
-[![npm version](https://badge.fury.io/js/<%= name %>.svg)](http://badge.fury.io/js/<%= name %>)
+# <%= name %> [![npm version](https://badge.fury.io/js/<%= name %>.svg)](http://badge.fury.io/js/<%= name %>)
 
 ## Install
 

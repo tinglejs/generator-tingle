@@ -34,7 +34,8 @@ module.exports = yeoman.generators.Base.extend({
             'zepto': '0.0.4',
             'fastclick': '^1.0.6'
         };
-        me.writeFileFromString(JSON.stringify(pkg, null, '  '), 'package.json');
+        // todo 想下怎么升级想要的依赖
+        // me.writeFileFromString(JSON.stringify(pkg, null, '  '), 'package.json');
 
         // DEMO 样式文件路径变更
         var html = me.readFileAsString('index.html');
