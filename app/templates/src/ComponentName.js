@@ -5,7 +5,7 @@
  * Copyright 2014-2015, Tingle Team, Alinw.
  * All rights reserved.
  */
-var classnames = require('classnames');
+const classnames = require('classnames');
 
 class <%= ComponentName %> extends React.Component {
 
@@ -14,8 +14,8 @@ class <%= ComponentName %> extends React.Component {
     }
 
     render() {
-        var t = this;
-        return <div ref="root" className={classnames('t<%= ComponentName %>', {
+        let t = this;
+        return <div ref='root' className={classnames('t<%= ComponentName %>', {
             [t.props.className]: !!t.props.className
         })}>
             <%= ComponentName %> component for tingle

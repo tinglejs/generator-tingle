@@ -12,4 +12,4 @@ npm install <%= name %> --save
 
 ## Links
 
-- [Fire a bug/Issues 提Bug](http://github.com/tinglejs/<%= name %>/issues)
+- [Issues](http://github.com/tinglejs/<%= name %>/issues)
