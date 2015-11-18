@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "<%= props.description %>",
   "repository": "https://github.com/tinglejs/<%= name %>.git",
-  "author": "<%= props.authorName %>",
+  "author": "<%- props.authorName %>",
   "main": "src/index.js",
   "files": [
     "src",

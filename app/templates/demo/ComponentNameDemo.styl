@@ -1,6 +1,6 @@
 /**
  * <%= ComponentName %> Component Demo for tingle
- * @author <%= props.authorName %>
+ * @author <%- props.authorName %>
  *
  * Copyright 2014-2015, Tingle Team, Alinw.
  * All rights reserved.
