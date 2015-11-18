@@ -79,6 +79,8 @@ tnpm install tingle-dev-tools
 #### v1.0.19 (2015-11-18)
 
 * 增加 `.editorconfig` 文件到项目模板。
+* 增加 `.editorconfig` 当前项目。
+* 修复 `author` 的转义问题。
 
 #### v1.0.18 (2015-9-11)
 
