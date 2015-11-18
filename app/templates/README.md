@@ -2,7 +2,7 @@
 
 ## Install
 
-```js
+```
 npm install <%= name %> --save
 ```
 

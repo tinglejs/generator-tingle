@@ -76,10 +76,14 @@ tnpm install tingle-dev-tools
 
 ## updates
 
+#### v1.0.19 (2015-11-18)
+
+* 增加 `.editorconfig` 文件到项目模板。
+
 #### v1.0.18 (2015-9-11)
 
 * `README.md` 格式问题修复。
-* `package..json` 依赖更新。
+* `package.json` 依赖更新。
 * upgrade 默认不进行依赖更新。
 
 
