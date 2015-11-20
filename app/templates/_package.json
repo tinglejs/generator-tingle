@@ -10,7 +10,8 @@
     "README.md"
   ],
   "keywords": [
-    "<%= name %>,<%= ComponentName %>"<% if(keywords.length){%><% for (var i = 0; i < keywords.length; i++) { %>,
+    "<%= name %>",
+    "<%= ComponentName %>"<% if(keywords.length){%><% for (var i = 0; i < keywords.length; i++) { %>,
     "<%= keywords[i] %>"<% }} %>
   ],
   "dependencies": {
