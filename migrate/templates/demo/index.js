@@ -6,7 +6,6 @@
  * All rights reserved.
  */
 require('tingle-context');
-let ReactDOM = require('react-dom');
 window.FastClick && FastClick.attach(document.body);
 var Demo = require('./<%= ComponentName %>Demo');
 ReactDOM.render(<Demo/>, document.getElementById('TingleDemo'));
