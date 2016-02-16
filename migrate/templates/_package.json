@@ -4,8 +4,9 @@
   "description": "<%= props.description %>",
   "repository": "https://github.com/tinglejs/<%= name %>.git",
   "author": "<%- props.authorName %>",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "files": [
+    "dist",
     "src",
     "README.md"
   ],
