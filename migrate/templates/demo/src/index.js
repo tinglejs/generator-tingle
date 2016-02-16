@@ -2,7 +2,7 @@
  * <%= ComponentName %> Component Demo for tingle
  * @author <%- props.authorName %>
  *
- * Copyright 2014-2015, Tingle Team, Alinw.
+ * Copyright 2014-2016, Tingle Team.
  * All rights reserved.
  */
 require('tingle-context');

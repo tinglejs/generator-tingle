@@ -30,7 +30,7 @@ module.exports = yeoman.generators.Base.extend({
             type: 'confirm',
             name: 'skipInstall',
             message: 'Skip install the dependencies?',
-            default: false
+            default: true
         }];
 
         this.prompt(prompts, function(answers) {
@@ -52,20 +52,23 @@ module.exports = yeoman.generators.Base.extend({
         this.copy('_gitignore', '.gitignore');
         this.template('README.md', 'README.md');
         this.copy('gulpfile.js', 'gulpfile.js');
+        this.copy('webpack.dev.js', 'webpack.dev.js');
         this.template('_package.json', 'package.json');
         this.copy('_editorconfig', '.editorconfig');
     },
 
     demoFiles: function() {
+        this.mkdir('demo/src/svg');
+        this.copy('demo/src/svg/tingle-logo-v.color.svg', 'demo/src/svg/tingle-logo-v.color.svg');
         this.template('index.html', 'index.html');
-        this.template('demo/index.js', 'demo/index.js');
-        this.template('demo/ComponentNameDemo.js', 'demo/'+this.ComponentName+'Demo.js');
-        this.template('demo/ComponentNameDemo.styl', 'demo/'+this.ComponentName+'Demo.styl');
+        this.template('demo/src/index.js', 'demo/src/index.js');
+        this.template('demo/src/ComponentNameDemo.js', 'demo/src/'+this.ComponentName+'Demo.js');
+        this.template('demo/src/ComponentNameDemo.styl', 'demo/src/'+this.ComponentName+'Demo.styl');
     },
 
     componentFiles: function () {
-        this.mkdir('src/svg/tingle');
-        this.mkdir('src/svg/custom');
+        this.mkdir('src/svg/ios');
+        this.mkdir('src/svg/nw');
         this.template('src/index.js', 'src/index.js');
         this.template('src/ComponentName.js', 'src/'+this.ComponentName+'.js');
         this.template('src/ComponentName.styl', 'src/'+this.ComponentName+'.styl');

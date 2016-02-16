@@ -2,10 +2,13 @@
  * <%= ComponentName %> Component for tingle
  * @author <%- props.authorName %>
  *
- * Copyright 2014-2015, Tingle Team, Alinw.
+ * Copyright 2014-2016, Tingle Team.
  * All rights reserved.
  */
 const classnames = require('classnames');
+
+// 如果需要则打开
+//const Context = require('tingle-context');
 
 class <%= ComponentName %> extends React.Component {
 
@@ -18,7 +21,7 @@ class <%= ComponentName %> extends React.Component {
         return <div ref='root' className={classnames('t<%= ComponentName %>', {
             [t.props.className]: !!t.props.className
         })}>
-            <%= ComponentName %> component for tingle
+            <%= ComponentName %> Component for Tingle!
         </div>;
     }
 }

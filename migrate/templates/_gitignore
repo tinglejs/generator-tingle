@@ -4,6 +4,7 @@ design/
 .idea/
 docs/
 dist/
+demo/dist/
 
 # Packages #
 ############
