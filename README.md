@@ -63,7 +63,7 @@ tnpm install tingle-dev-tools
 
 ## updates
 
-#### v2.1.3 (2016-02-18)
+#### v2.1.3 (2016-02-18) [diff](https://github.com/tinglejs/generator-tingle/commit/af3a27f70e191cbe55b591b7c23020f944110e74)
 
 * 添加更新命令 `yo tingle:migrate_update`，可以直接将老的`gulpfile`、`webpack.dev.js`、`.gitignore`文件替换成新的。
 * 更新`.gitignore`文件
