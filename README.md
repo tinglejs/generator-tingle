@@ -63,10 +63,19 @@ tnpm install tingle-dev-tools
 
 ## updates
 
+#### v2.1.3 (2016-02-18)
+
+* 添加更新命令 `yo tingle:migrate_update`，可以直接将老的`gulpfile`、`webpack.dev.js`、`.gitignore`文件替换成新的。
+* 更新`.gitignore`文件
+  - 忽略`node_modules`软连接，之前只忽略目录。
+  - 忽略`src/*.css`和`src/*.css.map`
+* `gulpfile`中添加`build_css`任务
+* 删除多余的`devDependencies`依赖
+
 #### v2.1.2 (2016-02-18)
 
 * `browsersync`添加`open external`配置。
-* build的文件取消压缩。
+* 待发布的文件取消压缩。
 
 #### v2.1.1 (2016-02-17)
 

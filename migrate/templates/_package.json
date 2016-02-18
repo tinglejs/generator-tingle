@@ -1,6 +1,6 @@
 {
   "name": "<%= name %>",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "<%= props.description %>",
   "repository": "https://github.com/tinglejs/<%= name %>.git",
   "author": "<%- props.authorName %>",
@@ -43,12 +43,11 @@
     "react": "~0.14.6",
     "react-dom": "~0.14.6",
     "through2": "~2.0.1",
-    "tingle-box": "^1.0.0",
-    "tingle-collection": "^1.0.1",
     "webpack": "~1.12.11"
   },
   "scripts": {
-    "start": "gulp d"
+    "start": "gulp d",
+    "build": "gulp b"
   },
   "license": "MIT",
   "screenshots": ""
