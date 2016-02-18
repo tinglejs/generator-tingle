@@ -63,6 +63,17 @@ tnpm install tingle-dev-tools
 
 ## updates
 
+#### v2.1.2 (2016-02-18)
+
+* `browsersync`添加`open external`配置。
+* build的文件取消压缩。
+
+#### v2.1.1 (2016-02-17)
+
+* 增强的`svg`构建任务支持。
+* 调整`demo`目录，添加`demo/src`和`demo/dist`。
+* 组件发布策略修改，添加对应的`gulp build`命令。
+
 #### v2.0.0 (2015-12-20)
 
 * 增加项目整体的React版本升级至0.14.3，以适应脚手架的变化。
