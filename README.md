@@ -63,7 +63,7 @@ tnpm install tingle-dev-tools
 
 ## updates
 
-#### v2.2.4 (2016-03-30)
+#### v2.2.5 (2016-03-30)
 
 * 修复若干 bug
   * .eshintrc.json -> .eslintrc.json
