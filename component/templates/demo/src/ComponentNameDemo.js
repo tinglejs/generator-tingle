@@ -7,7 +7,7 @@
  */
 
 const classnames = require('classnames');
-const Context = require('tingle-context');
+// const Context = require('tingle-context');
 
 const <%= ComponentName %> = require('../../src');
 
@@ -15,17 +15,13 @@ const <%= ComponentName %> = require('../../src');
 //const <%= ComponentName %> = require('../../dist');
 
 class Demo extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
         }
     }
-
     render() {
-        return <div>
-            <<%= ComponentName %>/>
-        </div>
+        return <<%= ComponentName %>/>
     }
 };
 

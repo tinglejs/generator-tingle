@@ -63,6 +63,12 @@ tnpm install tingle-dev-tools
 
 ## updates
 
+#### v2.2.4 (2016-03-30)
+
+* 修复若干 bug
+  * .eshintrc.json -> .eslintrc.json
+  * src 中的 js 代码风格由原来的 require 式改为 import 式
+
 #### v2.2.0 (2016-03-30)
 
 * 添加全新的 component 脚手架

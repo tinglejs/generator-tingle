@@ -5,5 +5,5 @@
  * Copyright 2014-2015, Tingle Team, Alinw.
  * All rights reserved.
  */
-
-module.exports = require('./<%= ComponentName %>');
+import <%= ComponentName %> from './<%= ComponentName %>';
+module.exports = <%= ComponentName %>;
