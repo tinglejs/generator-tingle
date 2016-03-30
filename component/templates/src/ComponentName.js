@@ -7,33 +7,25 @@
  */
 const classnames = require('classnames');
 
-// 如果需要则打开
-//const Context = require('tingle-context');
-
-class <%= ComponentName %> extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        let t = this;
-        return <div ref='root' className={classnames('t<%= ComponentName %>', {
-            [t.props.className]: !!t.props.className
-        })}>
-            <%= ComponentName %> Component for Tingle!
-        </div>;
-    }
-}
-
-<%= ComponentName %>.defaultProps = {
-}
-
 // http://facebook.github.io/react/docs/reusable-components.html
-<%= ComponentName %>.propTypes = {
+const <%= ComponentName %> = React.createClass({
+  getDefaultProps() {
+    return {
+      className: ''
+    }
+  },
+
+  propTypes: {
     className: React.PropTypes.string
-}
+  },
 
-<%= ComponentName %>.displayName = '<%= ComponentName %>';
+  render() {
+    return <div ref='root' className={classnames('t<%= ComponentName %>', {
+        [this.props.className]: !!this.props.className
+    })}>
+        <%= ComponentName %> Component for Tingle!
+    </div>;
+  }
+})
 
-module.exports = <%= ComponentName %>;
+export default <%= ComponentName %>

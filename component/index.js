@@ -55,6 +55,7 @@ module.exports = yeoman.generators.Base.extend({
     this.template('webpack.dev.js', 'webpack.dev.js');
     this.template('_package.json', 'package.json');
     this.copy('_editorconfig', '.editorconfig');
+    this.template('_.eslintrc.json', '.eslintrc.json');
   },
 
   demoFiles: function() {
