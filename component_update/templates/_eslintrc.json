@@ -1,0 +1,31 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "no-unreachable": "error",
+    "no-inner-declarations": "error",
+    "valid-typeof": "error",
+    "block-scoped-var": "error",
+    "curly": "error",
+    "vars-on-top": "error",
+    "no-undefined": "error",
+    "no-unused-vars": "error",
+    "no-use-before-define": "error",
+    "no-var": "error",
+    "indent": ["error", 2],
+    "arrow-spacing": "error"
+  },
+  "plugins": [
+    "react"
+  ]
+}

@@ -63,6 +63,10 @@ tnpm install tingle-dev-tools
 
 ## updates
 
+#### v2.3.0 (2016-03-31)
+
+* 添加 `yo tingle:component_update` 来对老的文件结构进行升级
+
 #### v2.2.5 (2016-03-30)
 
 * 修复若干 bug
