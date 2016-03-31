@@ -1,5 +1,9 @@
 ## Change Log
 
+#### v2.3.1 (2016-03-31)
+
+* 添加 babel-eslint@6.0.0
+
 #### v2.3.0 (2016-03-31)
 
 * 添加 `yo tingle:component_update` 来对老的文件结构进行升级

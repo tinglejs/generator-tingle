@@ -1,6 +1,6 @@
 {
   "name": "generator-tingle",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Scaffold for Tingle Component",
   "keywords": [
     "yeoman-generator",
